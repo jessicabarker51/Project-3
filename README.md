@@ -1,6 +1,7 @@
 # Project-3
 
 Project Proposal: College Football Recruiting Visualization
+
 Team Members:
 -	Edgar A. Guevara
 -	Jesicca Barker
@@ -20,8 +21,8 @@ Our web application will offer the following visualizations and user-driven inte
 
 a) Filter Options:
    - Position: Users can filter the recruits based on their playing positions.
-   - Year: Users can select a specific year to explore the recruiting data.
    - Committed to: Users can filter recruits based on the schools they have committed to.
+
 
 b) Data Visualization:
    - Charting Height, Weight, and Rating: We will create interactive charts to showcase the distribution and trends of recruits' height, weight, and rating.
@@ -42,6 +43,8 @@ We will employ the following technologies and libraries to develop our visualiza
 - Leaflet: A JavaScript library for creating interactive maps to display the location of recruits' schools.
 - Chart.js: A JavaScript library for creating responsive and interactive charts.
 - Other libraries: We will explore additional JavaScript libraries as needed to enhance the project's functionality and aesthetics.
+-Flask-Cors: Need to install “pip install flask-cors” for Windows & “pip3 install flask-cors” for MAC to run the API in local host
+
 
 4. Project Timeline:
 To ensure the timely completion of our project, we have outlined the following timeline:
@@ -60,3 +63,4 @@ To ensure the timely completion of our project, we have outlined the following t
 
 Conclusion:
 Our project will provide an interactive and insightful visualization of college football recruiting data, enabling users to explore recruit characteristics, identify areas for improvement, and gain a better understanding of where recruits are coming from. By leveraging various technologies and libraries, we aim to create an engaging web application that fulfills the requirements outlined in the project description.
+
