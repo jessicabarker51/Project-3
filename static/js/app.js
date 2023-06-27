@@ -88,6 +88,26 @@ function createGraph2(selectedState) {
   // Extract school and state province labels for the graph
   const schools = filteredData.map((item) => item.school);
   const labels = filteredData.map((item) => item.school.length);
+  const ranks = filteredData.map((item) => item.ranking);
+  const max_rank = Math.min(...ranks);
+
+// use reduce() method to find the sum
+var sum = labels.reduce((accumulator, currentValue) => {
+  return accumulator + currentValue
+},0);
+
+var sampleMetadata1 = d3.select("#sample-metadata").selectAll('h1');
+var metadataSamples = {"Player Count":sum,"Highest Rank":max_rank};
+  //-------------------------------------------------
+  // Display the ID's demographic information
+  var sampleMetadata = sampleMetadata1.data(d3.entries(metadataSamples))
+  sampleMetadata.enter()
+                .append('h1')
+                .merge(sampleMetadata)
+                .text(d => `${d.key} : ${d.value}`)
+                .style('font-size','75%')
+
+  sampleMetadata.exit().remove()
 
   let trace = {
     x: schools,
