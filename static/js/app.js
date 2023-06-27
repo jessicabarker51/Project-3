@@ -90,6 +90,10 @@ function createGraph2(selectedState) {
   const labels = filteredData.map((item) => item.school.length);
   const ranks = filteredData.map((item) => item.ranking);
   const max_rank = Math.min(...ranks);
+  const heights = filteredData.map((item) => item.height);
+  const max_height = Math.max(...heights);
+  const ratings = filteredData.map((item) => item.rating);
+  const max_rating = Math.max(...ratings);
 
 // use reduce() method to find the sum
 var sum = labels.reduce((accumulator, currentValue) => {
@@ -97,7 +101,7 @@ var sum = labels.reduce((accumulator, currentValue) => {
 },0);
 
 var sampleMetadata1 = d3.select("#sample-metadata").selectAll('h1');
-var metadataSamples = {"Player Count":sum,"Highest Rank":max_rank};
+var metadataSamples = {"Player Count":sum,"Highest Rank":max_rank,"Highest Rating":max_rating,"Tallest Height":max_height+'"'};
   //-------------------------------------------------
   // Display the ID's demographic information
   var sampleMetadata = sampleMetadata1.data(d3.entries(metadataSamples))
