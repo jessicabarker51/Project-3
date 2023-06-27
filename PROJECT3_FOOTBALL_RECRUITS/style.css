@@ -1,0 +1,23 @@
+  /* Remove the default margin and padding from the body. */
+body {
+  padding: 0;
+  margin: 0;
+}
+
+/* Set map, body, and html to 100% of the screen size. */
+.mapButton,
+body,
+html {
+  height: 100%;
+}
+/*setting margins between 2 bar charts*/
+.custom-margin {
+  margin-top: 20px;
+}
+
+/* charts placement*/
+.chart-container {
+  display: flex;
+  flex-direction: column;
+}
+
