@@ -8,6 +8,7 @@ import json
 from pprint import pprint   
 import pandas as pd
 import re
+from flask_cors import CORS
 
 api_key = "vxk6N5XX+RkcAEzUiypTQCfoUqGq2UrsKB/pooQAkS4u2vuI6QeA3Qz+FYKaWQH6"
 url = "https://api.collegefootballdata.com/recruiting/players?year=2022&classification=HighSchool"
@@ -55,6 +56,7 @@ from sqlalchemy import Column, Integer, String, Float, Boolean
 
 
 app = Flask(__name__)
+CORS(app)
 
 # Database Setup
 engine = create_engine("sqlite:///recruiting_data.db")
