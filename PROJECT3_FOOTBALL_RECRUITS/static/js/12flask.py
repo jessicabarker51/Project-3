@@ -104,5 +104,24 @@ def get_all_data():
 
     return jsonify(all_data)
 
+@app.route("/api/recruits/top10/<college>")
+def top_10(college):
+    """Return the top 10 of all recruits."""
+    # Query all data
+    session = Session(engine)
+    #write a query to return the top 10 recruits for a given college
+    results = session.query(Recruits).filter(Recruits.committedTo == college).order_by(Recruits.rating.desc()).limit(10).all() 
+    session.close()
+
+    # Create a dictionary from the row data and append to a list of all_data
+    all_data = []
+    for row in results:
+        data_dict = {}
+        for column in row.__table__.columns:
+            data_dict[column.name] = getattr(row, column.name)
+        all_data.append(data_dict)
+    return jsonify(all_data)
+
 if __name__ == '__main__':
     app.run(debug=True)
+

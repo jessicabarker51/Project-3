@@ -46,11 +46,12 @@ function createGraph(selectedState) {
 
   // Extract position and state province labels for the graph
   const positions = filteredData.map((item) => item.position);
-  const labels = filteredData.map((item) => item.position.length);
+  const labels = filteredData.map((item) => item.position).count;
 
   let trace = {
     x: positions,
     y: labels,
+    hoverinfo: 'none',
     marker: {
       color: "rgb(142,124,195)",
     },
@@ -63,15 +64,15 @@ function createGraph(selectedState) {
 
   // Create layout variable to set plot's layout
   let layout = {
-    title: "Recruited Player's Position by State",
+    title: `Recruited Player's Position by State of ${selectedState} `,
     yaxis: {
-      //tickmode: "linear",
+      tickmode: labels,
     },
     margin: {
       l: 100,
       r: 100,
       t: 100,
-      b: 30,
+      b: 50,
     },
   };
 
@@ -79,19 +80,20 @@ function createGraph(selectedState) {
   Plotly.newPlot("bar1", data, layout);
 }
 
-function createGraph2(selectedState) {
+function createGraph2(selectedState2) {
   // Filter the data based on the selected state
   const filteredData = dataFromApi.filter(
-    (item) => item.stateProvince === selectedState
+    (item) => item.stateProvince === selectedState2
   );
 
   // Extract school and state province labels for the graph
   const schools = filteredData.map((item) => item.school);
-  const labels = filteredData.map((item) => item.school.length);
+  const labels2 = filteredData.map((item) => item.school).count;
 
   let trace = {
     x: schools,
-    y: labels,
+    y: labels2,
+    //hoverinfo: 'none',
     marker: {
       color: "rgb(142,124,195)",
     },
@@ -100,24 +102,27 @@ function createGraph2(selectedState) {
   };
 
   // Create data variable
-  let data = [trace];
+  let data2 = [trace];
 
   // Create layout variable to set plot's layout
-  let layout = {
-    title: "Recruits from Schools by State",
+  let layout2 = {
+    title: `Recruits from Schools by State of ${selectedState2} `,
+    xaxis: {
+      tickangle: 45
+    },
     yaxis: {
-      //tickmode: "linear",
+      tickmode: "linear",
     },
     margin: {
-      l: 90,
-      r: 90,
-      t: 90,
-      b: 30,
+      l: 100,
+      r: 100,
+      t: 150,
+      b: 40,
     },
   };
 
   // Create the bar plot
-  Plotly.newPlot("bar2", data, layout);
+  Plotly.newPlot("bar2", data2, layout2);
 }
 
 
@@ -229,7 +234,7 @@ function mapCities(myMap) {
   for (var i = 0; i < schoolData.length; i++) {
     const schoolArrayItem = schoolData[i];
 
-    L.circleMarker([schoolArrayItem.latitude, schoolArrayItem.longitude], {
+    L.marker([schoolArrayItem.latitude, schoolArrayItem.longitude], {
       color: color, // Set the color of the circle marker
       fillColor: gradient, // Set the fill color of the circle marker
       fillOpacity: 0.5, // Set the opacity of the fill color
@@ -237,7 +242,7 @@ function mapCities(myMap) {
     })
       .addTo(myMap)
       .bindPopup(
-        `<h3>City: ${schoolArrayItem.city}</h3> <hr> <h4>Total School: ${schoolArrayItem.school.length}</h4> <hr> <h4>Total Position: ${schoolArrayItem.position.length}</h4> <hr> <h4>Ranking: ${schoolArrayItem.ranking}</h4>`
+        `<h3>City: ${schoolArrayItem.city}</h3> <hr> <h4>Total School: ${schoolArrayItem.school.length}</h4> <hr> <h4>Total Position: ${schoolArrayItem.position.length}</h4> <hr> <h4>Total Players: ${schoolArrayItem.athleteId.length}</h4>`
       );
   }
 }

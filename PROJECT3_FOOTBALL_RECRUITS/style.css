@@ -14,3 +14,10 @@ html {
 .custom-margin {
   margin-top: 20px;
 }
+
+/* charts placement*/
+.chart-container {
+  display: flex;
+  flex-direction: column;
+}
+
