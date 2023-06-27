@@ -63,4 +63,3 @@ To ensure the timely completion of our project, we have outlined the following t
 
 Conclusion:
 Our project will provide an interactive and insightful visualization of college football recruiting data, enabling users to explore recruit characteristics, identify areas for improvement, and gain a better understanding of where recruits are coming from. By leveraging various technologies and libraries, we aim to create an engaging web application that fulfills the requirements outlined in the project description.
-
