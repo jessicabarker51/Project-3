@@ -93,7 +93,7 @@ function createGraph2(selectedState2) {
   let trace = {
     x: schools,
     y: labels2,
-    //hoverinfo: 'none',
+    hoverinfo: 'none',
     marker: {
       color: "rgb(142,124,195)",
     },
