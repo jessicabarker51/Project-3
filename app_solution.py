@@ -25,7 +25,7 @@ if response.status_code == 200:
 
     # Create a DataFrame from the data
     df = pd.DataFrame(data)
-
+    df=df[df["stateProvince"].apply(lambda x: len(x) == 2)]
     df.dropna(inplace=True)
     df.drop('recruitType', axis=1, inplace=True)
 
