@@ -14,24 +14,26 @@ Introduction:
 Our project aims to visualize college football recruiting data to provide insights into the origins and characteristics of recruits, as well as help players identify areas for improvement to increase their chances of getting into their desired schools. We will leverage data from the College Football Data API and create a Python Flask-powered API, HTML/CSS, and JavaScript-based web application to showcase the visualizations.
 
 1. Dataset Selection:
-We will utilize the recruiting players dataset available at https://collegefootballdata.com/exporter/recruiting/players. This dataset contains detailed information about college football recruits, including their attributes, commitments, positions, schools, and more. The dataset consists of over 100 records, providing sufficient data to generate meaningful visualizations.
+  - We will utilize the recruiting players dataset available at https://collegefootballdata.com/exporter/recruiting/players. This dataset contains detailed information about college football recruits, including their attributes, commitments, positions, schools, and more. The dataset consists of over 100 records, providing sufficient data to generate meaningful visualizations.
+- We utilized a CSV file created with player positions acronyms to demonstrate Papa Parse which is a powerful CSV parser for Javascript.
 
-2. Visualizations and Interactions:
+3. Visualizations and Interactions:
 Our web application will offer the following visualizations and user-driven interactions:
 
 a) Filter Options:
-   - Position: Users can filter the recruits based on their playing positions.
-   - Committed to: Users can filter recruits based on the schools they have committed to.
+   - Buttons: To show the school data, Foot ball positions and the geo map
+   - Position: Users can filter the recruits based on their states
+   
 
 
 b) Data Visualization:
    - Charting Height, Weight, and Rating: We will create interactive charts to showcase the distribution and trends of recruits' height, weight, and rating.
    - Map Visualization: We will plot the location of recruits' schools on a map, using city and state information, providing a geographical perspective on recruiting hotspots.
-   - Number Dashboard: A dashboard will display the total number of players based on the selected filters, giving users an overview of the dataset.
+
 
 c) User-driven Interaction:
    - Menus and Dropdowns: Users will be able to select filter options through dropdown menus.
-   - Textboxes: Users can input specific values or search queries in textboxes to further refine the data.
+   
 
 3. Technology Stack:
 We will employ the following technologies and libraries to develop our visualization project:
@@ -42,9 +44,8 @@ We will employ the following technologies and libraries to develop our visualiza
 - JavaScript: To implement interactive elements and handle data visualizations on the client side.
 - Leaflet: A JavaScript library for creating interactive maps to display the location of recruits' schools.
 - Chart.js: A JavaScript library for creating responsive and interactive charts.
-- Other libraries: We will explore additional JavaScript libraries as needed to enhance the project's functionality and aesthetics.
+- Other libraries: We explored additional JavaScript libraries and used Papa Parse which is a powerful CSV parser for Javascript and demonstrated how it works.
 -Flask-Cors: Need to install “pip install flask-cors” for Windows & “pip3 install flask-cors” for MAC to run the API in local host
-
 
 4. Project Timeline:
 To ensure the timely completion of our project, we have outlined the following timeline:
