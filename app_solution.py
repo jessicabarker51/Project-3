@@ -9,7 +9,7 @@ from pprint import pprint
 import pandas as pd
 import re
 from flask_cors import CORS
-from config_new import api_key;
+from config_new1 import api_key;
 
 url = "https://api.collegefootballdata.com/recruiting/players?year=2022&classification=HighSchool"
 
